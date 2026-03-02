@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titus Muli Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #f5f5f5; }
+        .accent { color: #f97316; } /* orange accent */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #f97316;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item { position: relative; width: 50%; padding: 1rem 2rem; }
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px; height: 20px;
+            background: #f97316;
+            border-radius: 50%;
+            top: 1rem;
+        }
+        .timeline-item.left::after { right: -10px; }
+        .timeline-item.right::after { left: -10px; }
+        .navbar a { transition: color 0.3s; }
+        .navbar a:hover { color: #f97316; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white shadow-md z-50 navbar">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="#home" class="font-bold text-xl">Titus Muli</a>
+            <div class="space-x-4">
+                <a href="#about" class="hover:accent">About</a>
+                <a href="#projects" class="hover:accent">Projects</a>
+                <a href="#links" class="hover:accent">Links</a>
+                <a href="#contact" class="hover:accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="pt-24 bg-gray-100">
+        <div class="container mx-auto flex flex-col md:flex-row items-center p-6">
+            <div class="md:w-1/2 mb-6 md:mb-0">
+                <h1 class="text-4xl font-bold">Titus Muli</h1>
+                <p class="text-xl mt-2">Electrical & Electronics Engineering Student | Mechatronics & Systems Design | Strathmore University</p>
+                <p class="mt-4 text-gray-700">Design-driven engineer specializing in integrated mechanical-electrical-software systems, telemetry, and control algorithms. Interested in satellites and advanced mechatronics.</p>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="img/profile.jpg" alt="Titus Muli" class="rounded-lg shadow-lg w-64 h-64 object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-12 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="mb-4">Design-driven Electrical & Electronics Engineering student specializing in full-stack mechatronic system architecture — from CAD and PCB design through embedded firmware, control algorithms, telemetry pipelines, and cloud-integrated data systems.</p>
+                    <p>Experienced leading low-voltage system design for a Formula Student race car under real-world cost, reliability, and compliance constraints. Strong focus on control systems, real-time telemetry, and integrated mechanical–electrical–software design. Deep interest in satellite systems and advanced mechatronics.</p>
+                </div>
+                <div>
+                    <img src="img/about.jpg" alt="About" class="rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-12 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+
+            <!-- Project Timeline -->
+            <div class="relative timeline">
+                <!-- Formula Student Telemetry -->
+                <div class="timeline-item left bg-white p-6 rounded shadow mb-6">
+                    <h3 class="text-xl font-bold">Formula Student Telemetry & Driver Interface System</h3>
+                    <p class="text-gray-700 mt-2">Designed complete hardware-to-cloud telemetry architecture streaming ~25 parameters at 20 Hz locally with synchronized cloud logging.</p>
+                    <p class="mt-2"><a href="YOUR_TELEMETRY_GITHUB_LINK" class="accent underline">GitHub</a></p>
+                </div>
+
+                <!-- Auto-Balance -->
+                <div class="timeline-item right bg-white p-6 rounded shadow mb-6">
+                    <h3 class="text-xl font-bold">Reactive Auto-Balance Control Platform</h3>
+                    <p class="text-gray-700 mt-2">PD controller design from first principles for dynamic stabilization. Built simulation and physical prototype.</p>
+                    <p class="mt-2"><a href="YOUR_AUTO_BALANCE_GITHUB_LINK" class="accent underline">GitHub</a> | <a href="YOUR_AUTO_BALANCE_ONSHAPE_LINK" class="accent underline">Onshape</a></p>
+                </div>
+
+                <!-- Notch Marker -->
+                <div class="timeline-item left bg-white p-6 rounded shadow mb-6">
+                    <h3 class="text-xl font-bold">Laser Notch Marker (Portable CNC)</h3>
+                    <p class="text-gray-700 mt-2">Mechanical design with 3-jaw chuck and XY translation mechanism. Embedded firmware and control logic.</p>
+                    <p class="mt-2"><a href="YOUR_NOTCH_MARKER_GITHUB_LINK" class="accent underline">GitHub</a> | <a href="YOUR_NOTCH_MARKER_ONSHAPE_LINK" class="accent underline">Onshape</a></p>
+                </div>
+
+                <!-- Smart Pantry -->
+                <div class="timeline-item right bg-white p-6 rounded shadow mb-6">
+                    <h3 class="text-xl font-bold">Smart Pantry Management System</h3>
+                    <p class="text-gray-700 mt-2">16-channel load-cell system with autonomous power switching and low-duty operation.</p>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <img src="img/smartpantry1.jpg" class="rounded shadow">
+                        <img src="img/smartpantry2.jpg" class="rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Links -->
+    <section id="links" class="py-12 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Find Me Online</h2>
+            <div class="flex justify-center gap-6">
+                <a href="YOUR_GITHUB_LINK" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-orange-500 transition">GitHub</a>
+                <a href="YOUR_PORTFOLIO_LINK" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-orange-500 transition">Portfolio</a>
+                <a href="YOUR_ONSHAPE_LINK" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-orange-500 transition">Onshape</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-12 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+            <p>Email: <a href="mailto:titus.muli@strathmore.edu" class="accent underline">titus.muli@strathmore.edu</a></p>
+            <p>Phone: <a href="tel:+254740208291" class="accent underline">+254 740 208291</a></p>
+            <p>Location: Nairobi, Kenya</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-white text-center text-gray-700">
+        &copy; 2026 Titus Muli | Designed with Tailwind CSS
+    </footer>
+</body>
+</html>
